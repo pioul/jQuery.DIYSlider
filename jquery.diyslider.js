@@ -67,9 +67,9 @@
 								newSlideNode
 									.removeClass("next-active")
 									.addClass("active");
-								this.slider.trigger("moved", [newSlideNode, newSlide, true]);
+								this.slider.trigger("moved.diyslider", [newSlideNode, newSlide, true]);
 							}, this);
-							this.slider.trigger("moving", [newSlideNode, newSlide, true]);
+							this.slider.trigger("moving.diyslider", [newSlideNode, newSlide, true]);
 							// if instant move (no animation, used when the plugin is initialized using options.start)
 							if(instant){
 								this.slidesContainer.css(this.getSlidesContainerPosition());
@@ -88,8 +88,8 @@
 							}
 						// some cases might require to know when the move is complete, even if it didn't actually move
 						} else if(newSlide == this.currentSlide){
-							this.slider.trigger("moving", [$(this.slides[newSlide - 1]), newSlide, false]);
-							this.slider.trigger("moved", [$(this.slides[newSlide - 1]), newSlide, false]);
+							this.slider.trigger("moving.diyslider", [$(this.slides[newSlide - 1]), newSlide, false]);
+							this.slider.trigger("moved.diyslider", [$(this.slides[newSlide - 1]), newSlide, false]);
 						}
 					},
 					// resize the slider
@@ -117,7 +117,7 @@
 							width: (this.options.animationAxis == 'x')? Math.ceil(parseInt(this.dimensions.w, 10) / this.options.display) +'px' : this.dimensions.w,
 							height: (this.options.animationAxis == 'y')? Math.ceil(parseInt(this.dimensions.h, 10) / this.options.display) +'px' : this.dimensions.h,
 						});
-						this.slider.trigger("resized", [this.dimensions]);
+						this.slider.trigger("resized.diyslider", [this.dimensions]);
 						return t;
 					},
 					// update DIYslider options on the fly
@@ -151,6 +151,10 @@
 							overflow: 'hidden',
 							'box-sizing': 'border-box'
 						});
+					},
+					// get the total number of slides
+					getSlidesCount: function(){
+						return this.slidesCount;
 					},
 					// get top and left position of slidesContainer
 					getSlidesContainerPosition: function(){
