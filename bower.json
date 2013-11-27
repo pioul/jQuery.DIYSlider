@@ -17,6 +17,6 @@
     "bower.json"
   ],
   "dependencies": {
-    "jQuery": "~1.4.4"
+    "jQuery": ">=1.4.4"
   }
 }
