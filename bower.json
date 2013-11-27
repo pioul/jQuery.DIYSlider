@@ -1,0 +1,22 @@
+{
+  "name": "jQuery.DIYSlider",
+  "main": "jQuery.DIYSlider.min.js",
+  "version": "1.0.0",
+  "homepage": "http://pioul.fr/jquery-diyslider",
+  "authors": [
+    "Philippe Masset"
+  ],
+  "description": "jQuery.diyslider is a jQuery slider with every option, method and event you ever dreamed of.",
+  "keywords": [
+    "jquery",
+    "slider"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "*.md",
+    "bower.json"
+  ],
+  "dependencies": {
+    "jQuery": ">=1.4.4"
+  }
+}
